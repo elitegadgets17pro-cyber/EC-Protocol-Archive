@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Care | Dossier Interactivo de Biotecnología Capilar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --forest: #1B4C3E; --sage: #8FA78C; --cream: #F4F1E9; --gold: #B8985D; --white: #FFFFFF;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--cream); color: var(--forest); font-family: 'Montserrat', sans-serif; line-height: 1.8; }
+
+        /* Header Institucional */
+        nav { background: var(--forest); padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-family: 'Playfair Display', serif; color: var(--cream); font-size: 1.4rem; letter-spacing: 4px; }
+        .nav-tag { color: var(--gold); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
+
+        /* Hero Section Premium */
+        .hero { display: flex; align-items: center; min-height: 85vh; background: var(--white); padding: 0 10%; gap: 60px; }
+        .hero-text { flex: 1.2; }
+        .hero-image { flex: 0.8; display: flex; justify-content: center; }
+        .hero-image img { width: 100%; max-width: 500px; border-radius: 4px; box-shadow: 20px 20px 0px var(--cream), 21px 21px 0px var(--sage); object-fit: cover; }
+
+        .hero-tag { color: var(--gold); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 5px; margin-bottom: 25px; display: block; font-weight: 600; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 30px; color: var(--forest); }
+        .hero p { max-width: 600px; font-size: 1.15rem; color: #444; margin-bottom: 40px; font-weight: 300; }
+
+        .btn-pubmed { display: inline-block; padding: 20px 40px; background: var(--forest); color: var(--white); text-decoration: none; font-weight: 600; font-size: 0.85rem; letter-spacing: 2px; border: 1px solid var(--forest); transition: all 0.4s ease; }
+        .btn-pubmed:hover { background: transparent; color: var(--forest); transform: translateY(-3px); }
+
+        /* Acordeón Extendido */
+        .accordion-section { padding: 120px 10%; background: var(--cream); }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 20px; text-align: center; color: var(--forest); }
+        .section-subtitle { text-align: center; margin-bottom: 60px; font-size: 0.9rem; letter-spacing: 3px; color: var(--sage); text-transform: uppercase; }
+
+        .accordion-item { border-bottom: 1px solid rgba(27, 76, 62, 0.2); margin-bottom: 15px; background: rgba(255,255,255,0.2); }
+        .accordion-header { 
+            width: 100%; padding: 30px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; 
+            cursor: pointer; text-align: left; font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--forest); transition: all 0.3s;
+        }
+        .accordion-header:hover { background: rgba(255,255,255,0.5); padding-left: 40px; }
+        
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0, 1, 0, 1); }
+        .content-inner { padding: 0 35px 40px 35px; font-size: 1.05rem; color: #333; }
+        .content-inner strong { color: var(--forest); }
+        .content-inner ul { margin-top: 15px; list-style: none; }
+        .content-inner li { margin-bottom: 10px; padding-left: 20px; border-left: 2px solid var(--gold); }
+
+        .icon { font-size: 1.5rem; transition: transform 0.4s; color: var(--gold); font-weight: 200; }
+        .active .icon { transform: rotate(45deg); }
+        .active .accordion-content { max-height: 1000px; transition: max-height 1s ease-in-out; }
+
+        footer { padding: 80px 10%; background: var(--forest); color: var(--cream); text-align: center; }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 20px; color: var(--gold); }
+        
+        @media (max-width: 968px) {
+            .hero { flex-direction: column; padding: 80px 10% 40px; text-align: center; }
+            .hero-image { order: -1; width: 100%; }
+            .hero-image img { box-shadow: 15px 15px 0px var(--cream); }
+            .accordion-header { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">ELITE CARE</div>
+    <div class="nav-tag">Advanced Research Unit</div>
+</nav>
+
+<section class="hero">
+    <div class="hero-text">
+        <span class="hero-tag">Clinical Dossier 2024</span>
+        <h1>Biotina: La Ciencia de la <br><span style="color: var(--gold); font-style: italic;">Densidad Celular.</span></h1>
+        <p>Un análisis independiente sobre la Vitamina B7 y su papel crítico en la síntesis de queratina. No todos los suplementos atraviesan la barrera intestinal; entienda la diferencia entre ingerir y absorber.</p>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/28879195/" target="_blank" class="btn-pubmed">EXPLORAR EVIDENCIA PUBMED</a>
+    </div>
+    <div class="hero-image">
+        <!-- Imagen Luxury Clinical: Cristal de laboratorio y luz pura -->
+        <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?q=80&w=1000&auto=format&fit=crop" alt="Elite Care Scientific Glassware">
+    </div>
+</section>
+
+<section class="accordion-section">
+    <h2 class="section-title">Análisis de Biodisponibilidad</h2>
+    <p class="section-subtitle">Preguntas Críticas en Suplementación</p>
+
+    <div class="accordion-item">
+        <button class="accordion-header">
+            01. ¿Por qué la Biotina Orgánica es superior a la Sintética?
+            <span class="icon">+</span>
+        </button>
+        <div class="accordion-content">
+            <div class="content-inner">
+                <p>La mayoría de los suplementos comerciales utilizan biotina producida mediante procesos petroquímicos (síntesis de laboratorio). Estas moléculas aisladas a menudo carecen de los <strong>cofactores botánicos</strong> necesarios para su transporte celular.</p>
+                <ul>
+                    <li><strong>Bio-Identidad:</strong> El extracto de <em>Sesbania Grandiflora</em> que recomendamos posee una firma molecular idéntica a la que el cuerpo humano reconoce genéticamente.</li>
+                    <li><strong>Eficiencia Metabólica:</strong> Al ser una fuente viva, el cuerpo no gasta energía intentando "descifrar" la molécula; la absorción comienza en la mucosa gástrica de forma inmediata.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-header">
+            02. El impacto del café en la absorción (Transportador SMVT)
+            <span class="icon">+</span>
+        </button>
+        <div class="accordion-content">
+            <div class="content-inner">
+                <p>Existe un error crítico: tomar el suplemento junto al café matutino. La Biotina utiliza un transportador específico en el intestino llamado <strong>SMVT</strong>.</p>
+                <ul>
+                    <li><strong>Secuestro Molecular:</strong> Los taninos y polifenoles del café se adhieren a la biotina en el tracto digestivo, creando un complejo demasiado grande para ser absorbido por el transportador.</li>
+                    <li><strong>Protocolo de Éxito:</strong> Para garantizar una absorción cercana al 98%, se debe ingerir el suplemento con agua pura, dejando una ventana de <strong>2 horas</strong> respecto a cualquier bebida estimulante.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-header">
+            03. Ciclo Folicular: ¿Por qué el protocolo es de 90 días?
+            <span class="icon">+</span>
+        </button>
+        <div class="accordion-content">
+            <div class="content-inner">
+                <p>El cabello es un tejido de crecimiento lento y la parte visible está biológicamente muerta. El cambio real debe gestarse en la <strong>papila dérmica</strong>.</p>
+                <ul>
+                    <li><strong>Fase Anágena:</strong> Un folículo tarda entre 60 y 90 días en reprogramar su tasa de producción de queratina. Los resultados rápidos suelen ser superficiales y no estructurales.</li>
+                    <li><strong>Densidad Progresiva:</strong> Tras el primer mes se detiene la micro-inflamación folicular; en el segundo mes se consolida el grosor, y en el tercero la densidad es visible al ojo humano.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-header">
+            04. El Mito de las Megadosis (10.000 mcg)
+            <span class="icon">+</span>
+        </button>
+        <div class="accordion-content">
+            <div class="content-inner">
+                <p>Más no es mejor. El cuerpo humano tiene un <strong>umbral de saturación renal</strong> para las vitaminas hidrosolubles como la Vitamina B7.</p>
+                <ul>
+                    <li><strong>Desperdicio Metabólico:</strong> Ingerir 10.000mcg de biotina barata satura los receptores. El 80% de esa dosis termina siendo eliminada por la orina sin haber tocado la raíz.</li>
+                    <li><strong>La Regla de Oro:</strong> Es preferible una dosis de 2.500mcg de <strong>grado orgánico hidrosoluble</strong> (biodisponibilidad real) que una mega-dosis sintética inerte.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-logo">ELITE CARE</div>
+    <p>Investigación y Reputación basadas en datos clínicos contrastados.</p>
+    <p style="opacity: 0.4; margin-top: 30px; font-size: 0.7rem; max-width: 600px; margin-left: auto; margin-right: auto;">Este portal es un recurso educativo de Elite Care Research Unit. No constituye consejo médico profesional. Consulte siempre con su especialista antes de iniciar cualquier protocolo.</p>
+</footer>
+
+<script>
+    document.querySelectorAll('.accordion-header').forEach(button => {
+        button.addEventListener('click', () => {
+            const accordionItem = button.parentElement;
+            const isOpen = accordionItem.classList.contains('active');
+            
+            document.querySelectorAll('.accordion-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            if (!isOpen) {
+                accordionItem.classList.add('active');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
