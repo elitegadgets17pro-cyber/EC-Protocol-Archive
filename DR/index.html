@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Care | Dossier de Inducción Folicular</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --forest: #1B4C3E; --sage: #8FA78C; --cream: #F4F1E9; --gold: #B8985D; --white: #FFFFFF;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--cream); color: var(--forest); font-family: 'Montserrat', sans-serif; line-height: 1.8; }
+
+        /* Nav (Coherencia Institucional) */
+        nav { background: var(--forest); padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-family: 'Playfair Display', serif; color: var(--cream); font-size: 1.4rem; letter-spacing: 4px; font-weight: 700; }
+        .nav-tag { color: var(--gold); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
+
+        /* Hero Section Bi-Column */
+        .hero { display: flex; align-items: center; min-height: 80vh; background: var(--white); padding: 0 10%; gap: 60px; }
+        .hero-text { flex: 1.2; }
+        .hero-image { flex: 0.8; display: flex; justify-content: center; }
+        .hero-image img { 
+            width: 100%; max-width: 500px; border-radius: 4px; 
+            box-shadow: 20px 20px 40px rgba(0,0,0,0.05); 
+            object-fit: cover; height: 550px;
+        }
+
+        .hero-tag { color: var(--gold); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 5px; margin-bottom: 25px; display: block; font-weight: 600; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 3.8rem); line-height: 1.1; margin-bottom: 30px; }
+        .hero p { max-width: 600px; font-size: 1.15rem; color: #444; margin-bottom: 40px; font-weight: 300; }
+
+        .btn-pubmed { display: inline-block; padding: 20px 40px; background: var(--forest); color: var(--white); text-decoration: none; font-weight: 600; font-size: 0.85rem; letter-spacing: 2px; border: 1px solid var(--forest); transition: 0.3s; text-align: center; }
+        .btn-pubmed:hover { background: transparent; color: var(--forest); }
+
+        /* Phase Blueprint Structure */
+        .phase-section { padding: 100px 10%; }
+        .phase-block { 
+            background: var(--white); margin-bottom: 30px; border: 1px solid rgba(27, 76, 62, 0.1);
+            transition: all 0.5s ease; cursor: pointer; overflow: hidden;
+        }
+        .phase-header { padding: 40px; display: flex; align-items: center; justify-content: space-between; }
+        .phase-number { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold); opacity: 0.3; margin-right: 30px; }
+        .phase-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; flex-grow: 1; }
+        .gold-plus { font-size: 1.5rem; color: var(--gold); transition: transform 0.3s; }
+        
+        .phase-content { 
+            max-height: 0; padding: 0 40px; opacity: 0; transition: all 0.5s ease;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+        }
+        .phase-block.active { border-color: var(--gold); background: #fdfdfd; }
+        .phase-block.active .phase-content { max-height: 800px; padding: 0 40px 40px 40px; opacity: 1; }
+        .phase-block.active .phase-number { opacity: 1; }
+        .phase-block.active .gold-plus { transform: rotate(45deg); }
+
+        .info-label { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 10px; display: block; }
+        .info-text { font-size: 0.95rem; color: #555; }
+
+        footer { padding: 80px 10%; background: var(--forest); color: var(--cream); text-align: center; }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 20px; color: var(--gold); }
+
+        @media (max-width: 968px) {
+            .hero { flex-direction: column; text-align: center; }
+            .hero-image { order: -1; }
+            .phase-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">ELITE CARE</div>
+    <div class="nav-tag">Mechanical Induction Unit</div>
+</nav>
+
+<section class="hero">
+    <div class="hero-text">
+        <span class="hero-tag">Protocolo de Densidad</span>
+        <h1>Derma Roller: <br><span style="color: var(--gold); font-style: italic;">Inducción de Crecimiento.</span></h1>
+        <p>El microneedling capilar es una intervención biológica que utiliza la micro-lesión para despertar folículos latentes y multiplicar la absorción de nutrientes esenciales.</p>
+        <!-- Enlace a PubMed Corregido (Dhurat et al. Study) -->
+        <a href="https://pubmed.ncbi.nlm.nih.gov/34854067/" target="_blank" class="btn-pubmed">EVIDENCIA CIENTÍFICA (PUBMED)</a>
+    </div>
+    <div class="hero-image">
+        <!-- Imagen de hombre con barba cuidada y estética Quiet Luxury -->
+        <img src="https://images.unsplash.com/photo-1590540179852-2110a54f813a?q=80&w=1000&auto=format&fit=crop" alt="Beard Grooming and Density Elite Care">
+    </div>
+</section>
+
+<section class="phase-section">
+    <!-- FASE 1 -->
+    <div class="phase-block" onclick="togglePhase(this)">
+        <div class="phase-header">
+            <span class="phase-number">01</span>
+            <h3 class="phase-title">Activación del Folículo</h3>
+            <span class="gold-plus">+</span>
+        </div>
+        <div class="phase-content">
+            <div>
+                <span class="info-label">Acción Mecánica</span>
+                <p class="info-text">La penetración controlada de micro-agujas activa la cascada de coagulación y la liberación de factores de crecimiento derivados de plaquetas (PDGF).</p>
+            </div>
+            <div>
+                <span class="info-label">Respuesta Biológica</span>
+                <p class="info-text">Se estimulan las células madre en el área del "bulge" del folículo, promoviendo la transición del cabello de fase telógena (reposo) a anágena (crecimiento).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FASE 2 -->
+    <div class="phase-block" onclick="togglePhase(this)">
+        <div class="phase-header">
+            <span class="phase-number">02</span>
+            <h3 class="phase-title">Calibración 0.5mm</h3>
+            <span class="gold-plus">+</span>
+        </div>
+        <div class="phase-content">
+            <div>
+                <span class="info-label">El Estándar de Oro</span>
+                <p class="info-text">El estudio de Dhurat confirma que 0.5mm es la profundidad óptima para inducir la regeneración sin causar daño permanente o fibrosis en el tejido.</p>
+            </div>
+            <div>
+                <span class="info-label">Absorción</span>
+                <p class="info-text">Crea canales que permiten que compuestos como el <strong>Minoxidil</strong> o los <strong>Péptidos</strong> penetren hasta la papila dérmica, aumentando su eficacia hasta 40 veces.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FASE 3 -->
+    <div class="phase-block" onclick="togglePhase(this)">
+        <div class="phase-header">
+            <span class="phase-number">03</span>
+            <h3 class="phase-title">Ciclo de Remodelación</h3>
+            <span class="gold-plus">+</span>
+        </div>
+        <div class="phase-content">
+            <div>
+                <span class="info-label">Reposo Biológico</span>
+                <p class="info-text">La síntesis de colágeno Tipo I requiere tiempo. El protocolo exige de <strong>7 a 10 días de descanso</strong> entre sesiones para evitar la inflamación crónica.</p>
+            </div>
+            <div>
+                <span class="info-label">Resultados</span>
+                <p class="info-text">La mejora en la densidad y el grosor del tallo capilar (barba o cuero cabelludo) se consolida tras 8-12 semanas de uso disciplinado bajo este estándar.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BLOQUE AUTOMÁTICO DEL CEREBRO -->
+<section id="sugerencias-automaticas"></section>
+
+<footer>
+    <div class="footer-logo">ELITE CARE</div>
+    <p>Ciencia Aplicada a la Densidad y Estética Masculina.</p>
+</footer>
+
+<script>
+    function togglePhase(element) {
+        const isActive = element.classList.contains('active');
+        document.querySelectorAll('.phase-block').forEach(block => block.classList.remove('active'));
+        if (!isActive) element.classList.add('active');
+    }
+</script>
+
+<!-- Conexión al cerebro central -->
+<script src="../brain.js"></script>
+
+</body>
+</html>
