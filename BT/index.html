@@ -61,6 +61,62 @@
             .hero-image img { box-shadow: 15px 15px 0px var(--cream); }
             .accordion-header { font-size: 1.2rem; }
         }
+        /* --- BLOQUE DE RECOMENDACIONES ELITE CARE --- */
+        #sugerencias-automaticas {
+            padding: 80px 10%;
+            background-color: #FFFFFF;
+            border-top: 1px solid #8FA78C;
+        }
+
+        .sugerencia-card {
+            text-decoration: none;
+            background: #F4F1E9;
+            padding: 35px;
+            border: 1px solid transparent;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .sugerencia-card:hover {
+            border-color: #B8985D;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .sugerencia-tag {
+            color: #B8985D;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .sugerencia-titulo {
+            font-family: 'Playfair Display', serif;
+            color: #1B4C3E;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .sugerencia-desc {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .sugerencia-btn {
+            color: #1B4C3E;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #B8985D;
+            align-self: flex-start;
+        }
     </style>
 </head>
 <body>
@@ -151,7 +207,8 @@
         </div>
     </div>
 </section>
-
+<!-- Este bloque será rellenado automáticamente por el brain.js -->
+    <section id="sugerencias-automaticas"></section>
 <footer>
     <div class="footer-logo">ELITE CARE</div>
     <p>Investigación y Reputación basadas en datos clínicos contrastados.</p>
@@ -174,6 +231,7 @@
         });
     });
 </script>
-
+<!-- Conexión al archivo central que gestiona los dossiers -->
+    <script src="../brain.js"></script>
 </body>
 </html>
