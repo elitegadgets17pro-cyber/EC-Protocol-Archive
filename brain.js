@@ -1,6 +1,7 @@
 const baseDeDatos = [
     { id: 'BT', titulo: 'Biotina y Densidad', desc: 'Análisis de síntesis de queratina y transporte SMVT.', link: '../bt/index.html' },
-    { id: 'PT', titulo: 'Señalización Peptídica', desc: 'Bio-mensajeros para la regeneración de colágeno.', link: '../pt/index.html' }
+    { id: 'PT', titulo: 'Señalización Peptídica', desc: 'Bio-mensajeros para la regeneración de colágeno.', link: '../pt/index.html' },
+    { id: 'DR', titulo: '03. Protocolo Derma Roller', desc: 'Inducción de colágeno y activación folicular.', link: '/dr/index.html' }
 ];
 
 function dibujarSugerencias() {
