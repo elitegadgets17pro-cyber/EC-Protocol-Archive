@@ -1,6 +1,6 @@
 const baseDeDatos = [
-    { id: 'bt', titulo: 'Biotina y Densidad', desc: 'Análisis de síntesis de queratina y transporte SMVT.', link: '../bt/index.html' },
-    { id: 'peptidos', titulo: 'Señalización Peptídica', desc: 'Bio-mensajeros para la regeneración de colágeno.', link: '../peptidos/index.html' }
+    { id: 'BT', titulo: 'Biotina y Densidad', desc: 'Análisis de síntesis de queratina y transporte SMVT.', link: '../bt/index.html' },
+    { id: 'PT', titulo: 'Señalización Peptídica', desc: 'Bio-mensajeros para la regeneración de colágeno.', link: '../peptidos/index.html' }
 ];
 
 function dibujarSugerencias() {
