@@ -65,6 +65,72 @@
             .hero-image { order: -1; }
             .phase-content { grid-template-columns: 1fr; }
         }
+        /* --- BLOQUE DE RECOMENDACIONES ELITE CARE --- */
+#sugerencias-automaticas {
+    padding: 80px 10%;
+    background-color: #FFFFFF !important; /* Fondo blanco para que resalte la tarjeta crema */
+    border-top: 1px solid #8FA78C;
+}
+
+.sugerencia-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.sugerencia-card {
+    text-decoration: none !important; /* Quita el subrayado azul */
+    background-color: #F4F1E9 !important; /* Color Crema */
+    padding: 35px;
+    border: 1px solid transparent;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.sugerencia-card:hover {
+    border-color: #B8985D !important;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.sugerencia-tag {
+    color: #B8985D !important;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.sugerencia-titulo {
+    font-family: 'Playfair Display', serif;
+    color: #1B4C3E !important;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.sugerencia-desc {
+    color: #666 !important;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-decoration: none !important;
+}
+
+.sugerencia-btn {
+    color: #1B4C3E !important;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #B8985D;
+    align-self: flex-start;
+}
     </style>
 </head>
 <body>
