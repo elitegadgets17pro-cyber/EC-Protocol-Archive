@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Care Research | Hub de Inteligencia Estética</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --forest: #1B4C3E; --sage: #8FA78C; --cream: #F4F1E9; --gold: #B8985D; --white: #FFFFFF;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--cream); 
+            color: var(--forest); 
+            font-family: 'Montserrat', sans-serif; 
+            line-height: 1.6;
+        }
+
+        /* HEADER VERDE INSTITUCIONAL */
+        nav { 
+            background: var(--forest); 
+            padding: 20px 10%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            position: fixed; 
+            width: 100%; 
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+      /* Alineación del logo e icono */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre la casita y el nombre */
+}
+
+.nav-left a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: opacity 0.3s;
+}
+
+.nav-left a:hover {
+    opacity: 0.8;
+}
+
+.nav-left i {
+    color: var(--gold);
+    font-size: 1.2rem;
+}
+        .logo { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 1.4rem; 
+            letter-spacing: 4px; 
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .nav-tag { color: var(--white); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; }
+
+        /* HERO CON IMAGEN Y PROFUNDIDAD */
+        .hero { 
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            background: linear-gradient(rgba(27, 76, 62, 0.7), rgba(27, 76, 62, 0.7)), 
+                        url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+            padding: 0 10%;
+        }
+        .hero-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+        }
+        .hero h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: clamp(2.5rem, 6vw, 4.5rem); 
+            color: var(--white);
+            line-height: 1.1; 
+            margin-bottom: 20px;
+        }
+        .hero p { 
+            font-size: 1.2rem; 
+            color: var(--cream);
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        /* SECCIÓN MISIÓN */
+        .mission { 
+            padding: 120px 10%;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            background: var(--white);
+        }
+        .mission-image {
+            flex: 1;
+            position: relative;
+        }
+        .mission-image img {
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: 40px 40px 0px var(--cream), 41px 41px 0px var(--sage);
+        }
+        .mission-text { flex: 1; }
+        .mission-text h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 30px; }
+        .mission-text p { font-size: 1.1rem; color: #444; margin-bottom: 20px; }
+        .gold-line { width: 60px; height: 3px; background: var(--gold); margin-bottom: 30px; }
+
+        /* GRID DE DOSSIERS - ALTO CONTRASTE */
+        .archive { 
+            padding: 100px 10%;
+            background: var(--forest); 
+            color: var(--cream);
+        }
+        .archive-header { text-align: center; margin-bottom: 80px; }
+        .archive-header h2 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 10px; color: var(--white); }
+        
+        .dossier-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+        }
+        .dossier-card { 
+            background: var(--white); 
+            padding: 40px; 
+            text-decoration: none; 
+            color: var(--forest);
+            transition: all 0.5s ease;
+            position: relative;
+            box-shadow: 20px 20px 0px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            height: 420px;
+            justify-content: space-between;
+        }
+        .dossier-card:hover { 
+            transform: translate(-5px, -5px);
+            box-shadow: 35px 35px 60px rgba(0,0,0,0.4);
+            border: 1px solid var(--gold);
+        }
+        .dossier-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            filter: grayscale(100%);
+            transition: 0.5s;
+        }
+        .dossier-card:hover img { filter: grayscale(0%); }
+        .card-category { font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 10px; display: block; }
+        .dossier-card h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 15px; }
+        .dossier-card p { font-size: 0.9rem; color: #666; }
+
+        footer { 
+            padding: 60px 10%; 
+            background: #0d261f; 
+            color: var(--cream); 
+            text-align: center;
+        }
+
+        @media (max-width: 968px) {
+            .mission { flex-direction: column; text-align: center; }
+            .archive { padding: 60px 5%; }
+        }
+    </style>
+  <!-- Carga de iconos FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav-left">
+        <!-- El enlace envuelve al icono y al nombre -->
+        <a href="index.html">
+            <i class="fas fa-home"></i>
+            <span class="logo">ELITE CARE RESEARCH</span>
+        </a>
+    </div>
+    <span class="nav-tag">Science Bureau</span>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Investigamos por ti. <br><span style="font-style: italic; color: var(--gold);">Tú decides con datos.</span></h1>
+        <p>AUDITORÍA INDEPENDIENTE DE BIOTECNOLOGÍA ESTÉTICA</p>
+    </div>
+</section>
+
+<section class="mission">
+    <div class="mission-image">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop" alt="Ciencia de Precisión">
+    </div>
+    <div class="mission-text">
+        <div class="gold-line"></div>
+        <h2>Nuestra Misión</h2>
+        <p>En un mercado saturado de promesas, <strong>Elite Care Research</strong> actúa como el filtro de seguridad para tu bienestar. Analizamos fórmulas, verificamos la biodisponibilidad y estudiamos la evidencia clínica para que no tengas que hacerlo tú.</p>
+        <p>No somos fabricantes. Somos divulgadores de la verdad molecular.</p>
+    </div>
+</section>
+
+<section class="archive">
+    <div class="archive-header">
+        <p style="color: var(--gold); letter-spacing: 4px; font-size: 0.8rem; margin-bottom: 20px;">PORTAL DE ACCESO</p>
+        <h2>Dossiers Activos</h2>
+    </div>
+    
+    <div class="dossier-grid">
+        
+        <!-- DOSSIER 01: BIOTINA -->
+        <a href="BT/index.html" class="dossier-card">
+            <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=1000&auto=format&fit=crop" alt="Dossier 01">
+            <div>
+                <span class="card-category">Investigación 01</span>
+                <h3>Densidad Capilar</h3>
+                <p>Análisis técnico sobre la síntesis de queratina y la biotina de origen orgánico.</p>
+            </div>
+            <p style="font-weight: 600; font-size: 0.7rem; border-bottom: 1px solid var(--gold); align-self: flex-start;">ABRIR DOSSIER</p>
+        </a>
+
+        <!-- DOSSIER 02: PÉPTIDOS -->
+        <a href="pt/index.html" class="dossier-card">
+            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1000&auto=format&fit=crop" alt="Dossier 02">
+            <div>
+                <span class="card-category">Investigación 02</span>
+                <h3>Señalización Peptídica</h3>
+                <p>Bio-mensajeros celulares: Cómo activar la regeneración de colágeno real.</p>
+            </div>
+            <p style="font-weight: 600; font-size: 0.7rem; border-bottom: 1px solid var(--gold); align-self: flex-start;">ABRIR DOSSIER</p>
+        </a>
+
+        <!-- DOSSIER 03: DERMA ROLLER (IMAGEN Y TEXTO ACTUALIZADOS) -->
+        <a href="dermaroller/index.html" class="dossier-card">
+            <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=1000&auto=format&fit=crop" alt="Dossier 03">
+            <div>
+                <span class="card-category">Investigación 03</span>
+                <h3>Microneedling Avanzado</h3>
+                <p>Protocolo de inducción folicular y micro-canales de absorción biológica.</p>
+            </div>
+            <p style="font-weight: 600; font-size: 0.7rem; border-bottom: 1px solid var(--gold); align-self: flex-start;">ABRIR DOSSIER</p>
+        </a>
+
+    </div>
+</section>
+
+<footer>
+    <div class="logo" style="color: var(--gold); font-size: 1.8rem;">ELITE CARE RESEARCH</div>
+    <p style="font-size: 0.8rem; margin-top: 20px;">Protocolos Basados en Evidencia Clínica.</p>
+    <div style="width: 40px; height: 1px; background: var(--gold); margin: 30px auto;"></div>
+    <p style="font-size: 0.6rem; opacity: 0.5;">© 2024 Independent Research Unit. No sustituye consejo médico.</p>
+  <div style="margin-top: 30px;">
+    <a href="https://www.tiktok.com/@_elite.care_" target="_blank" style="color: var(--gold); text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; font-weight: 600; border: 1px solid var(--gold); padding: 10px 20px;">
+        <i class="fab fa-tiktok" style="margin-right: 8px;"></i> SEGUIR EN TIKTOK
+    </a>
+</div>
+</footer>
+
+</body>
+</html>
